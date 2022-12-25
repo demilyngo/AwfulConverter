@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CurrencyConverter.MainPage"
+             xmlns:CurrencyConverter="clr-namespace:CurrencyConverter"
+             x:DataType="CurrencyConverter:MainViewModel">
+    <StackLayout>
+
+        <HorizontalStackLayout 
+            HorizontalOptions="End">
+
+            <DatePicker
+                Date="{Binding Date}"
+                Margin="15"
+                Format="d">
+            </DatePicker>
+        </HorizontalStackLayout>
+        <Label 
+            Text="{Binding CurrentDate}"
+            HorizontalOptions="End" 
+            Margin="15"/>
+        <FlexLayout 
+            Margin="15" 
+            JustifyContent="SpaceBetween">
+            <Picker 
+                Title = "Из"
+                ItemsSource="{Binding Valutes}"
+                SelectedItem="{Binding ValuteFrom}"
+                HeightRequest="45"
+                WidthRequest="200"/>
+            <Entry
+                Text="{Binding ValueFrom}"
+                WidthRequest="130"
+                HeightRequest="45">
+                <Entry.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ChangeFlag}" CommandParameter="1"/>
+                </Entry.GestureRecognizers>
+            </Entry>
+        </FlexLayout>
+        <FlexLayout 
+            Margin="15" 
+            JustifyContent="SpaceBetween">
+            <Picker 
+                Title = "В"
+                ItemsSource="{Binding Valutes}"
+                SelectedItem="{Binding ValuteTo}"
+                HeightRequest="45"
+                WidthRequest="200">
+            </Picker>
+            <Entry
+                Text="{Binding ValueTo}"
+                HeightRequest="45"
+                WidthRequest="130">
+                <Entry.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ChangeFlag}" CommandParameter="0"/>
+                </Entry.GestureRecognizers>
+            </Entry>
+        </FlexLayout>
+    </StackLayout>
+</ContentPage>
