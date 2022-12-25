@@ -6,21 +6,19 @@
              x:DataType="CurrencyConverter:MainViewModel">
     <StackLayout>
 
-        <HorizontalStackLayout 
-            HorizontalOptions="End">
+        <HorizontalStackLayout>
 
             <DatePicker
                 Date="{Binding Date}"
-                Margin="15"
+                Margin="20"
                 Format="d">
             </DatePicker>
         </HorizontalStackLayout>
         <Label 
             Text="{Binding CurrentDate}"
-            HorizontalOptions="End" 
-            Margin="15"/>
+            Margin="20"/>
         <FlexLayout 
-            Margin="15" 
+            Margin="20"
             JustifyContent="SpaceBetween">
             <Picker 
                 Title = "Из"
@@ -38,7 +36,7 @@
             </Entry>
         </FlexLayout>
         <FlexLayout 
-            Margin="15" 
+            Margin="20"
             JustifyContent="SpaceBetween">
             <Picker 
                 Title = "В"
